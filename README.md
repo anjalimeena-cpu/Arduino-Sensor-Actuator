@@ -29,6 +29,8 @@ Two separate thresholds are used to demonstrate multi-actuator control based on 
 
 ---
 ![Setup Image](https://github.com/anjalimeena-cpu/Arduino-Sensor-Actuator/blob/main/Circuit%20on%20Tinkercad.png?raw=true)
+## Hardware Setup
+![Setup Image](https://github.com/anjalimeena-cpu/Arduino-Sensor-Actuator/blob/main/Hardware%20Setup.jpeg?raw=true)
 
 ## 🛠 Circuit Connections
 **LDR Sensor:**
@@ -45,8 +47,8 @@ Two separate thresholds are used to demonstrate multi-actuator control based on 
 - Negative (–) → GND  
 
 A Tinkercad schematic and real circuit image are included in the `/images` folder.
-## Demo Video
- [Click here to watch the video](https://drive.google.com/drive/folders/1_EMLpwNIDCjZd_DRcHNTEctpvK_b7AYE?usp=drive_link)
+## ## Demo Video
+ [Watch the project demo here](https://drive.google.com/drive/folders/1_EMLpwNIDCjZd_DRcHNTEctpvK_b7AYE?usp=drive_link)
 
 
 ---
