@@ -45,6 +45,9 @@ Two separate thresholds are used to demonstrate multi-actuator control based on 
 - Negative (–) → GND  
 
 A Tinkercad schematic and real circuit image are included in the `/images` folder.
+## Demo Video
+ [Click here to watch the video](https://drive.google.com/drive/folders/1_EMLpwNIDCjZd_DRcHNTEctpvK_b7AYE?usp=drive_link)
+
 
 ---
 
