@@ -2,8 +2,11 @@ int ldrPin = A0;
 int ledPin = 8;
 int buzzerPin = 9;
 
-int ledThreshold = 350;     // LED turns ON below this (dark)
-int buzzerThreshold = 450;  // Buzzer turns ON when it's even darker
+// PERFECT thresholds for your LDR values:
+int thresholdOn  = 380;  // touching
+int thresholdOff = 550;  // hand away
+
+bool state = false;
 
 void setup() {
   Serial.begin(9600);
@@ -12,23 +15,30 @@ void setup() {
 }
 
 void loop() {
-  int ldrValue = analogRead(ldrPin);
-  Serial.print("LDR Value: ");
-  Serial.println(ldrValue);
+  // Smooth values
+  int v1 = analogRead(ldrPin);
+  delay(3);
+  int v2 = analogRead(ldrPin);
+  delay(3);
+  int v3 = analogRead(ldrPin);
+  int value = (v1 + v2 + v3) / 3;
 
-  // LED control
-  if (ldrValue < ledThreshold) {
-    digitalWrite(ledPin, HIGH);
-  } else {
-    digitalWrite(ledPin, LOW);
+  Serial.println(value);
+
+  // Hysteresis logic
+  if (!state && value < thresholdOn) {
+    state = true;   
+  }
+  else if (state && value > thresholdOff) {
+    state = false;  
   }
 
-  // Buzzer control
-  if (ldrValue < buzzerThreshold) {
-    digitalWrite(buzzerPin, HIGH);
-  } else {
-    digitalWrite(buzzerPin, LOW);
-  }
+  // LED
+  digitalWrite(ledPin, state ? HIGH : LOW);
 
-  delay(200);
+  // Buzzer
+  if (state) tone(buzzerPin, 1000);
+  else noTone(buzzerPin);
+
+  delay(100);
 }
