@@ -28,6 +28,7 @@ The Arduino reads this analog value from pin **A0** and performs the following l
 Two separate thresholds are used to demonstrate multi-actuator control based on sensor intensity levels.
 
 ---
+![Setup Image](https://github.com/anjalimeena-cpu/Arduino-Sensor-Actuator/blob/main/Circuit%20on%20Tinkercad.png?raw=true)
 
 ## 🛠 Circuit Connections
 **LDR Sensor:**
